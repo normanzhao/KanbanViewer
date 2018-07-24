@@ -1,0 +1,13 @@
+<select class="projectSelector" ngModel="selectedProject" (change)="getSelectedProject($event)">
+  <option *ngFor="let p of projects" value={{p.id}}>[{{p.acronym}}] {{p.title}}</option>
+</select>
+
+<div class="open Container">
+  <div class="titleText">Open</div>
+</div>
+<div class="ongoing Container">
+  <div class="titleText">Ongoing</div>
+</div>
+<div class="closed Container">
+  <div class="titleText">Closed</div>
+</div>

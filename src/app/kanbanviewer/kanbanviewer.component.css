@@ -1,0 +1,30 @@
+.projectSelector {
+  width: 100%;
+  font-size: 20pt;
+}
+
+.open {
+  float: left;
+}
+
+.ongoing {
+  display: inline-block;
+}
+
+.closed {
+  float: right;
+}
+
+.Container {
+  width: 30%;
+  height: 100%;
+  margin: 1%;
+  padding: 10px 12px 20px 5px;
+  border: 1px solid #aaaaaa;
+}
+
+.titleText {
+  border: solid;
+  width: 100%;
+  text-align: center;
+}
