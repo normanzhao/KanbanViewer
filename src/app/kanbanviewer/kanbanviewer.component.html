@@ -1,13 +1,89 @@
+<link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+
 <select class="projectSelector" ngModel="selectedProject" (change)="getSelectedProject($event)">
-  <option *ngFor="let p of projects" value={{p.id}}>[{{p.acronym}}] {{p.title}}</option>
+  <option *ngFor="let p of projects" value={{p.id-1}}>[{{p.acronym}}] {{p.title}}</option>
 </select>
 
 <div class="open Container">
   <div class="titleText">Open</div>
+      <div class='Item' *ngFor="let i of openItems">
+        <div class='itemTitle'>[{{i.id}}] {{i.title}}
+          <div class='itemDescription'>{{i.description}}</div>
+        </div>
+        <div class='itemAttributes'>
+          <table>
+            <tbody>
+              <tr>
+                <td class={{priority[i.priority]}} ng-style="{ width: '100%', border: 'none', textAlign: 'center' }"></td>
+              </tr>
+              <tr>
+                <td class={{type[i.type]}} ng-style= "{width: '100%', border: 'none', textAlign: 'center'}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 </div>
 <div class="ongoing Container">
   <div class="titleText">Ongoing</div>
+      <div class='Item' *ngFor="let i of ongoingItems">
+        <div class='itemTitle'>
+          [{{i.id}}] {{i.title}}
+          <div class='itemDescription'>{{i.description}}</div>
+        </div>
+        <div class='itemAttributes'>
+          <table>
+            <tbody>
+              <tr>
+                <td class={{priority[i.priority]}} ng-style="{ width: '100%', border: 'none', textAlign: 'center' }"></td>
+              </tr>
+              <tr>
+                <td class={{type[i.type]}} ng-style="{width: '100%', border: 'none', textAlign: 'center'}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 </div>
 <div class="closed Container">
   <div class="titleText">Closed</div>
+      <div class='Item' *ngFor="let i of closedItems">
+        <div class='itemTitle'>
+          [{{i.id}}] {{i.title}}
+          <div class='itemDescription'>{{i.description}}</div>
+        </div>
+        <div class='itemAttributes'>
+          <table>
+            <tbody>
+              <tr>
+                <td class={{priority[i.priority]}} ng-style="{ width: '100%', border: 'none', textAlign: 'center' }"></td>
+              </tr>
+              <tr>
+                <td class={{type[i.type]}} ng-style="{width: '100%', border: 'none', textAlign: 'center'}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+<div class="released Container">
+  <div class="titleText">Released</div>
+  <div class='Item' *ngFor="let i of releasedItems">
+    <div class='itemTitle'>
+      [{{i.id}}] {{i.title}}
+      <div class='itemDescription'>{{i.description}}</div>
+    </div>
+    <div class='itemAttributes'>
+      <table>
+        <tbody>
+          <tr>
+            <td class={{priority[i.priority]}} ng-style="{ width: '100%', border: 'none', textAlign: 'left' }"></td>
+          </tr>
+          <tr>
+            <td class={{type[i.type]}} ng-style="{width: '100%', border: 'none', textAlign: 'center'}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
